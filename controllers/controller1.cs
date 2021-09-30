@@ -11,6 +11,8 @@ namespace ConsumirAPI.controllers
     [ApiController]
     public class PerfilPersonal : ControllerBase
     {
+        public static string Nombre { get; private set; }
+
         [HttpGet("{id}")]
         public string Get(int id)
         {
@@ -27,18 +29,19 @@ namespace ConsumirAPI.controllers
         public string Post(perfilDto PerfilPersonal)
         {
             //Guardar perfil en la base de datos
-            
+
 
             return PerfilPersonal.Nombre;
         }
-        [HttpDelete]
-        public string Delete(perfilDto PerfilPersonal)
+        [HttpDelete("{id}")]
+        public string Delete(int id)
         {
+
             //Eliminar perfil en la base de datos
 
             return PerfilPersonal.Nombre;
-
         }
+        
 
         public class perfilDto
         {
